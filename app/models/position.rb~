@@ -13,6 +13,14 @@ class Position < ActiveRecord::Base
   has_many :competencies
   accepts_nested_attributes_for :competencies, allow_destroy: true
 
+  def position_status
+    if name = ""
+      "Vacant"
+    else
+      "Filled"
+    end
+  end
+
   def permanent_outcome
     if permanent = 1
       "permanent"

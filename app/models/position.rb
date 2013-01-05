@@ -14,7 +14,7 @@ class Position < ActiveRecord::Base
   accepts_nested_attributes_for :competencies, allow_destroy: true
 
   def position_status
-    if name = ""
+    if name == ""
       "Vacant"
     else
       "Filled"
@@ -22,7 +22,7 @@ class Position < ActiveRecord::Base
   end
 
   def permanent_outcome
-    if permanent = 1
+    if permanent == 1
       "permanent"
     else
       "temporarily"
@@ -50,31 +50,31 @@ class Position < ActiveRecord::Base
   end
 
   def attitude1_excel
-    unless attitude1 = ''
+    unless attitude1 == ''
       '- ' + attitude1
     end
   end
 
   def attitude2_excel
-    unless attitude2 = ''
+    unless attitude2 == ''
       '- ' + attitude2
     end
   end
 
   def attitude3_excel
-    unless attitude3 = ''
+    unless attitude3 == ''
       '- ' + attitude3
     end
   end
 
   def attitude4_excel
-    unless attitude4 = ''
+    unless attitude4 == ''
       '- ' + attitude4
     end
   end
 
   def attitude5_excel
-    unless attitude5 = ''
+    unless attitude5 == ''
       '- ' + attitude5
     end
   end
